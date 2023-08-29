@@ -77,7 +77,6 @@ class Indices:
         return self.__pBETA
     def VerPGAMMA(self):
         return self.__pGAMMA
-   
     
 class Sistema:
     def __init__(self) -> None:
@@ -86,7 +85,7 @@ class Sistema:
         def nuevoPaciente(self,j):
 
 
-p1 = Persona()
+ i = Persona()
 nombre = 'juan'
 cedula = 1041440201
 genero = 'm'
