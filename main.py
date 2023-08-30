@@ -13,6 +13,8 @@ class Persona:
         self.__cedula= c
     def AsignarGenero(self, g):
         self.__genero = g
+    def NuevaVisita(self, j):
+        self.__visitas[j.VerFechaVisita()] = j
 
     def VerNombre(self):
         return self.__nombre
@@ -20,6 +22,8 @@ class Persona:
         return self.__cedula
     def VerGenero(self):
         return self.__genero
+    def VerVisitas(self):
+        return self.__visitas
     
 
 class Visita():
@@ -80,17 +84,56 @@ class Indices:
     
 class Sistema:
     def __init__(self) -> None:
-        self.__RegistroPacientees = {}
+        self.__RegistroPacientes = {}
+    #FUNCION PARA AGREGAR NUEVO PACIENTE
+    def nuevoPaciente(self,j):
+        self.__RegistroPacientes[j.VerCedula()] = j
+     
+    def VerSistema(self):
+        return self.__RegistroPacientes
+    
+    # def VerPacienteCedula(self, c):
+    #     return self.__RegistroPacientes[c][c.VerCedula()]
 
-        def nuevoPaciente(self,j):
 
-
- i = Persona()
+p1 = Persona()
 nombre = 'juan'
 cedula = 1041440201
 genero = 'm'
 
+visita = 12/12/2023
+notas = 'Eta aliviado'
+ruta = 'ESTA ES LA RUTA DE PRUEBA'
+
+delta  = 0
+theta  = 0
+alfa1  = 0
+alfa2  = 0
+beta   = 0
+gamma  = 0
+
 p1.AsignarCedula(cedula)
 p1.AsignarNombre(nombre)
 p1.AsignarGenero(genero)
+
+vis = Visita()
+vis.AsignarRuta(ruta)
+vis.AsignarFechaVisita(visita)
+vis.AsignarNotas(notas)
+
+indices = Indices()
+indices.asignarPDELTA(delta)
+indices.asignarPTHETA(theta)
+indices.asignarPALFA1(alfa1)
+indices.asignarPALFA2(alfa2)
+indices.asignarPBETA(beta)
+indices.asignarPGAMMA(gamma)
+
+
+
+
+
+sis1 = Sistema()
+sis1.nuevoPaciente(p1)
+
 
