@@ -29,20 +29,20 @@ class Persona:
 class Visita():
     def __init__(self) -> None:
         self.__fechaVisita  = '' #datetime
-        self.registroEncefalografico = ''
+        self.__registroEncefalografico = ''
         self.__notas  = ''
 
     def AsignarFechaVisita(self, f):
         self.__fechaVisita = f
     def AsignarRuta(self, r):
-        self.registroEncefalografico= r
+        self.__registroEncefalografico= r
     def AsignarNotas(self, no):
         self.__notas = no
 
     def VerFechaVisita(self):
         return self.__fechaVisita
     def VerRuta(self):
-        return self.__fechaVisita
+        return self.__registroEncefalografico
     def VerNotas(self):
         return self.__notas
 
@@ -92,8 +92,6 @@ class Sistema:
     def VerSistema(self):
         return self.__RegistroPacientes
     
-    # def VerPacienteCedula(self, c):
-    #     return self.__RegistroPacientes[c][c.VerCedula()]
 
 
 p1 = Persona()
@@ -129,11 +127,14 @@ indices.asignarPALFA2(alfa2)
 indices.asignarPBETA(beta)
 indices.asignarPGAMMA(gamma)
 
-
-
-
-
 sis1 = Sistema()
 sis1.nuevoPaciente(p1)
+
+conVisitas = (str(vis.VerFechaVisita() +'RUTA: '+ vis.VerRuta()+ ' ' +'NOTAS: '+ vis.VerNotas()))
+indi = str('POTENCIAL DELTA: '+ str(indices.VerPDELTA()) + 'POTENCIAL THETA: '+ str(indices.VerPTHETA())+'POTENCIAL ALFA1: '+ str(indices.VerPALFA1())+ '\n'+'POTENCIAL ALFA2: '+str(indices.VerPALFA2())+ '\n' + 'POTENCIAL BETA: '+ str(indices.VerPBETA())+ '\n' +'POTENCIAL GAMMA: '+ str(indices.VerPGAMMA())+ '\n')
+
+# with open('ListaPacientes.txt', 'a') as archivo:
+#     contenido = str("CC: " + str(p1.VerCedula()) +' '+ 'NOMBRE: '+ p1.VerNombre() +' '+ "GENERO :"+ p1.VerGenero())
+#     archivo.write(contenido + "\n")
 
 
